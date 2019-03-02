@@ -36,9 +36,8 @@ namespace BBC.API
             services.AddDbContext<BBCDbContext>(option => option.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
-
-
-
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<INotificationService, NotificationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
