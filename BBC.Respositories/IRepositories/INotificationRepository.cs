@@ -6,5 +6,6 @@ namespace BBC.Respositories.IRepositories
 {
     public interface INotificationRepository
     {
+        IEnumerable<string> GetNotification();
     }
 }

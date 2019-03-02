@@ -4,7 +4,8 @@ using System.Text;
 
 namespace BBC.Services.IService
 {
-    public class INotificationService
+    public interface INotificationService
     {
+        IEnumerable<string> GetNotification();
     }
 }
