@@ -33,6 +33,7 @@ namespace BBC.API
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
+            services.AddMvc();
             services.AddDbContext<BBCDbContext>(option => option.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
@@ -47,6 +48,7 @@ namespace BBC.API
             {
                 app.UseDeveloperExceptionPage();
             }
+           
             app.UseMvc();
             app.UseAuthentication();
             app.UseCors("CorsPolicy");
